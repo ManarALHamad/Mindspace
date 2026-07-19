@@ -15,7 +15,10 @@ const signUp = async (req, res) => {
     }
 
     let userData = {}
+    
     userData.username = req.body.username
+    userData.email = req.body.email
+    userData.birthday = req.body.birthday
 
     const hashedPassword = bcrypt.hashSync(req.body.password, 10)
     userData.password = hashedPassword
