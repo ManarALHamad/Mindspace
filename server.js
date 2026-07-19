@@ -51,7 +51,7 @@ app.delete('/auth/sign-out', authCtrl.signOut)
 
 //task and list
 app.get('/lists/new', taskCtrl.newList)
-
+// app.post('/lists/:listId', taskCtrl.show)
 
 
 // app.get('/new', async(req, res) => {
