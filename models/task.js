@@ -1,4 +1,4 @@
-const mongoose = request('mongoose')
+const mongoose = require('mongoose')
 
 //title, description, isCompleted, dueDate, owner 
 const taskSchema = new mongoose.Schema ({

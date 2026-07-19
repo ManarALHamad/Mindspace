@@ -1,8 +1,11 @@
 const Task =require('../models/task') 
 
 
-const showList = (req,res) =>{
+const newList = (req,res) =>{
 
-    res.render('dashboard/new.ejs')
+    res.render('lists/new.ejs')
 }
 
+module.exports = {
+    newList,
+}
