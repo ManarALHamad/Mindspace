@@ -51,13 +51,14 @@ app.post('/auth/sign-in', authCtrl.signIn)
 app.delete('/auth/sign-out', authCtrl.signOut)
 
 //to do list name
-app.post('/lists', listCtrl.createList)
+app.get('/lists', listCtrl.index)
 app.get('/lists/new', listCtrl.newList)
-app.get('/lists/:listId/show', listCtrl.show)
+app.post('/lists', listCtrl.createList)
+app.get('/lists/:listId', listCtrl.show)
 //tasks
 
-// app.get('/lists/:listId/tasks/new', taskCtrl.newTask)
-
+app.get('/lists/:listId/tasks/new', taskCtrl.newTask)
+app.post('/lists/:listId/tasks', taskCtrl.createTask)
 
 
 app.get('/dashboard', async (req, res) => {

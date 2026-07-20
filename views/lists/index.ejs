@@ -6,7 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>View all tasks</h1>
-    
+
+    <!-- /lists -->
+
+    <h1>My To-do-lists</h1>
+
+    <% lists.forEach((item) =>{ %>
+        <ul>
+        <a href ="/lists/<%= item._id %>">
+
+             <%= item.title %>
+        </a>
+       </ul>
+    <% }) %>
+
+
+
 </body>
 </html>

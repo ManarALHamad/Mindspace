@@ -1,5 +1,20 @@
 const List =require('../models/lists') 
 
+//show all the lists
+
+const index = async(req, res) => {
+
+    const lists = await List.find({
+        author: req.session.user._id
+    })
+
+    res.render('lists/index.ejs', {
+
+        lists
+    })
+
+
+}
 
 const createList = async (req, res) => {
 
@@ -9,17 +24,17 @@ const createList = async (req, res) => {
     author: req.session.user._id
    })
 
-   res.redirect(`/lists/${list._id}/tasks/new`)
+   res.redirect('/lists')
 }
 
 
 
-const newList = (req, res) =>{
+const newList = async (req, res) =>{
 
     res.render('lists/new.ejs')
 }
-
-const show = async(req, res) => {
+//show list name with tasks
+const show = async (req, res) => {
 
     const list = await List.findById(req.params.listId)
 
@@ -29,12 +44,15 @@ const show = async(req, res) => {
 }
 
 
+
 module.exports = {
+    index,
     newList,
     createList,
     show,
+    
 }
 
-// first create list, press enter - make list in database and render add task page (form)
+// first create list, press enter - make list in database and render add task page (form) (done)
 // add task page - if tasks exist, forEach and display each task, otherwise display no tasks yet
 // click add task - edits the list to add the task; redirects back to add task page

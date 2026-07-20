@@ -10,7 +10,7 @@
 
 <h2>Add tasks</h2>
 
-<form>
+<form action="/lists/<%= list._id %>/tasks" method="POST">
         Task Title: 
         <input type="text" name="title" />
 
