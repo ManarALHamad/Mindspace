@@ -44,7 +44,12 @@ const show = async (req, res) => {
     })
 }
 
+const deleteList = async (req, res) => {
 
+    await List.findByIdAndDelete(req.params.listId)
+
+    res.redirect('/lists')
+}
 
 
 module.exports = {
@@ -52,6 +57,7 @@ module.exports = {
     newList,
     createList,
     show,
+    deleteList,
     
 }
 

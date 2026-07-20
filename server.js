@@ -55,8 +55,11 @@ app.get('/lists', listCtrl.index)
 app.get('/lists/new', listCtrl.newList)
 app.post('/lists', listCtrl.createList)
 app.get('/lists/:listId', listCtrl.show)
-//tasks
+app.delete('/lists/:listId', listCtrl.deleteList);
 
+
+
+//tasks
 app.get('/lists/:listId/tasks/new', taskCtrl.newTask)
 app.post('/lists/:listId/tasks', taskCtrl.createTask)
 

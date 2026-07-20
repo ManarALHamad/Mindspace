@@ -18,6 +18,11 @@
              <%= item.title %>
         </a>
        </ul>
+
+    <form action="/lists/<%= item._id %>?_method=DELETE" method="POST" style="display: inline;">
+     <button type="submit">Delete</button>
+        </form>
+        
     <% }) %>
 
     
@@ -26,7 +31,7 @@
         <button>Create New List</button>
     </a>
 
-
+     
 
 </body>
 </html>
