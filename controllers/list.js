@@ -24,7 +24,8 @@ const createList = async (req, res) => {
     author: req.session.user._id
    })
 
-   res.redirect('/lists')
+    res.redirect(`/lists/${list._id}/tasks/new`)
+
 }
 
 
@@ -37,11 +38,12 @@ const newList = async (req, res) =>{
 const show = async (req, res) => {
 
     const list = await List.findById(req.params.listId)
-
+    console.log(list.task); 
     res.render('lists/show.ejs', {
         list,
     })
 }
+
 
 
 

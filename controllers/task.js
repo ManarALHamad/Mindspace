@@ -8,23 +8,27 @@ const newTask = async(req, res) => {
     const list = await List.findById(req.params.listId);
 
     res.render('tasks/newTask.ejs', {
-        listId: req.params.listId
+        list
     });
 }
 
 const createTask = async(req, res) => {
 
-    const list = await List.findById(req.params.listId);
+    const foundList = await List.findById(req.params.listId);
 
-    list.tasks.push({
-        title: req.body.title,
-        description: req.body.description,
-        dueDate: req.body.dueDate
-    });
+    const taskData ={}
+    
+    taskData.title = req.body.title;
+    taskData.description = req.body.description;
+    taskData.dueDate = req.body.dueDate;
 
-    await list.save();
+    foundList.tasks.push(taskData)
 
-    res.redirect(`/lists/${list._id}`);
+    
+    await foundList.save()
+    
+     res.redirect(`/lists/${req.params.listId}/tasks/new`);
+   
 
 
 }

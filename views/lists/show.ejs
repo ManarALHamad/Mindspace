@@ -7,21 +7,24 @@
 </head>
 <body>
     
+    
 <h1>To do list name: <%= list.title %></h1>
 
 <ul>
-    <% list.tasks.forEach(task => { %>
-        <li>
-            <%= task.title %> <br>
-            <%= task.description %> <br>
-            <%= task.dueDate ? task.dueDate.toDateString() : '' %>
+   <% list.tasks.forEach((item) => { %>
+<li>
+            <%= item.title %> <br>
+            <%= item.description %> <br>
+            <%= item.dueDate %>
         </li>
-    <% }) %>
+
+   <% }) %>
+        
+   
 </ul>
 
-
-
-
-
+<a href="/lists/<%= list._id %>/tasks/new">
+    <button type="button">Add More Tasks</button>
+</a>
 </body>
 </html>
