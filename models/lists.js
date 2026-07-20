@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+//list and task schema
 
 const taskSchema = new mongoose.Schema ({
 

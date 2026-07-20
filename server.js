@@ -10,7 +10,7 @@ const session = require('express-session')
 const { MongoStore } = require('connect-mongo')
 
 const authCtrl = require('./controllers/auth')
-const taskCtrl =require('./controllers/tasks')
+const listCtrl =require('./controllers/list')
 
 // Set the port from environment variable or default to 3000
 const port = process.env.PORT ? process.env.PORT : "3000";
@@ -50,7 +50,7 @@ app.post('/auth/sign-in', authCtrl.signIn)
 app.delete('/auth/sign-out', authCtrl.signOut)
 
 //task and list
-app.get('/lists/new', taskCtrl.newList)
+app.get('/lists/new', listCtrl.newList)
 // app.post('/lists/:listId', taskCtrl.show)
 
 

@@ -1,4 +1,4 @@
-const Task =require('../models/task') 
+const List =require('../models/lists') 
 
 
 const newList = (req, res) =>{
