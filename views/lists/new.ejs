@@ -9,7 +9,12 @@
     <h1>Create a To-do-list</h1>
 
     <form action ="/lists" method="POST">
+    
+    <label>List Name:</label>
 
+    <input type="text" name="title" required />
+
+    <h2>Add tasks</h2>
         Task Title: 
         <input type="text" name="title" />
 
@@ -19,11 +24,41 @@
         Due Date:
         <input type="date" name="dueDate" />
 
-        Completed:
-        <input type="checkbox" name="isCompleted" />
+        <!-- Completed:
+        <input type="checkbox" name="isCompleted" /> -->
 
-        <button type="submit">Add the task</button>
+        <button type="button" id="addTask">add Task</button>
+
+
+        <button type="submit" >Create To-do-list</button>
 
     </form>
+
+    <!-- to add tasks  -->
+
+    <% let count = 1 %>
+
+    <% document.getElementById("addTask").addEventListener("click", function(){ %>
+
+        <% count ++ %>
+
+    Task Title: 
+    <input type="text" name="title" />
+
+    Task Description:
+    <input type="text" name="description" />
+
+    Due Date:
+    <input type="date" name="dueDate" />
+
+
+    <% }) %>
+    <% console.log(count)%>
+
+
+
+
+
+
 </body>
 </html>

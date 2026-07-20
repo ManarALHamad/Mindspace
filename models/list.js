@@ -1,6 +1,34 @@
 const mongoose = require('mongoose')
 
 
+const taskSchema = new mongoose.Schema ({
+
+    title: {
+
+        type: String,
+        required: true,
+    },
+
+    description: {
+        type: String,
+        required: true,
+
+    },
+
+    isCompleted:{
+
+        type: Boolean
+    },
+
+    dueDate:{
+
+        type: Date
+    },
+
+
+}, {timestamps: true})
+
+
 const listSchema = new mongoose.Schema({
 
     title: {
@@ -17,14 +45,12 @@ const listSchema = new mongoose.Schema({
 
     },
 
-    tasks: [{
-        
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Task",
-
-    }]
+   
+    tasks: [taskSchema],
 
 
+}, {timestamps: true})
 
+const List = mongoose.model('List', listSchema)
 
-})
+module.exports = List
