@@ -11,6 +11,7 @@ const { MongoStore } = require('connect-mongo')
 
 const authCtrl = require('./controllers/auth')
 const listCtrl =require('./controllers/list')
+const taskCtrl =require('./controllers/task')
 
 // Set the port from environment variable or default to 3000
 const port = process.env.PORT ? process.env.PORT : "3000";
@@ -49,15 +50,13 @@ app.get('/auth/sign-in', authCtrl.showSignInForm)
 app.post('/auth/sign-in', authCtrl.signIn)
 app.delete('/auth/sign-out', authCtrl.signOut)
 
-//task and list
+//to do list name
+app.post('/lists', listCtrl.createList)
 app.get('/lists/new', listCtrl.newList)
-// app.post('/lists/:listId', taskCtrl.show)
+app.get('/lists/:listId/show', listCtrl.show)
+//tasks
 
-
-// app.get('/new', async(req, res) => {
-//      res.redirect('new.ejs')
-// })
-
+// app.get('/lists/:listId/tasks/new', taskCtrl.newTask)
 
 
 
