@@ -65,6 +65,9 @@ app.post('/lists/:listId/tasks', taskCtrl.createTask)
 app.delete('/lists/:listId/tasks/:taskId', taskCtrl.deleteTask)
 app.get('/lists/:listId/tasks/:taskId/edit', taskCtrl.edit)
 app.put('/lists/:listId/tasks/:taskId', taskCtrl.update)
+app.put('/lists/:listId/tasks/:taskId/complete', taskCtrl.toggleComplete)
+
+
 
 app.get('/dashboard', async (req, res) => {
     if (!req.session.user){

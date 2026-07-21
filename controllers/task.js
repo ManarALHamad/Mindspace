@@ -69,13 +69,25 @@ const update = async (req, res) => {
     foundTask.title = req.body.title;
     foundTask.description = req.body.description;
     foundTask.dueDate = req.body.dueDate;
+    foundTask.isCompleted = req.body.isCompleted === "on"
 
     await foundList.save();
 
     res.redirect(`/lists/${req.params.listId}`);
 }
 
+const toggleComplete = async (req, res) => {
 
+    const foundList = await List.findById(req.params.listId)
+
+    const foundTask = foundList.tasks.id(req.params.taskId)
+
+    foundTask.isCompleted = !foundTask.isCompleted
+
+    await foundList.save()
+
+    res.redirect(`/lists/${req.params.listId}`)
+}
 
 
 
@@ -86,4 +98,5 @@ module.exports ={
     deleteTask,
     edit,
     update,
+    toggleComplete,
 }

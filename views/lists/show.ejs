@@ -18,16 +18,24 @@
             <%= item.description %> <br>
             <%= item.dueDate %>
 
+<form action="/lists/<%= list._id %>/tasks/<%= item._id %>/complete?_method=PUT" method="POST">
+
+    <input
+        type="checkbox"
+        <%= item.isCompleted ? "checked" : "" %>
+        onchange="this.form.submit()"
+    >
+
+</form>
+
 
  <a href="/lists/<%= list._id %>/tasks/<%= item._id %>/edit">
-                <button type="button">Edit Task</button>
+<button type="button">Edit Task</button>
     </a>
 
 
  <form action="/lists/<%= list._id %>/tasks/<%= item._id %>?_method=DELETE" method="POST">
-        <button>Delete</button>
-
-
+    <button>Delete</button>
     </form>
 
    
@@ -36,11 +44,10 @@
 
 
 
-
    <% }) %>
         
-   
-</ul>
+</ul>   
+
 
 <a href="/lists/<%= list._id %>/tasks/new">
     <button type="button">Add More Tasks</button>
