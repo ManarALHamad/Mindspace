@@ -8,7 +8,8 @@ const newTask = async(req, res) => {
     const list = await List.findById(req.params.listId);
 
     res.render('tasks/newTask.ejs', {
-        list
+        list,
+        message: null
     });
 }
 
@@ -27,7 +28,11 @@ const createTask = async(req, res) => {
     
     await foundList.save()
     
-     res.redirect(`/lists/${req.params.listId}/tasks/new`);
+    res.render('tasks/newTask.ejs', {
+
+        list: foundList,
+        message: 'Task is added you can add more'
+    })
    
 
 
@@ -50,11 +55,11 @@ const edit = async (req, res) => {
 
     const foundTask = foundList.tasks.id(req.params.taskId)
 
-    await foundList.save();
+    // await foundList.save();
 
     res.render('tasks/editTask.ejs', {
         list: foundList,
-        task: foundTask
+        task: foundTask,
     })
 
 
@@ -88,8 +93,6 @@ const toggleComplete = async (req, res) => {
 
     res.redirect(`/lists/${req.params.listId}`)
 }
-
-
 
 
 module.exports ={

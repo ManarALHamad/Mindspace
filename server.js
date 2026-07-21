@@ -2,6 +2,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const express = require("express");
 const app = express();
+const path = require('path')
 
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
@@ -23,6 +24,7 @@ mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.🥭`);
 });
 
+app.use(express.static(path.join(__dirname, "public")))
 // Middleware to parse URL-encoded data from forms
 app.use(express.urlencoded({ extended: false }));
 // Middleware for using HTTP verbs such as PUT or DELETE
@@ -39,10 +41,25 @@ app.use(session({
 }))
 
 app.get('/', (req, res) => {
+
+    const quotes = [
+        "Sometimes good things fall apart so better things can fall together.",
+        "Small steps every day lead to big results.",
+        "Progress, not perfection.",
+        "Your future is created by what you do today.",
+        "Dream big. Start small. Act now.",
+        "Believe you can and you're halfway there.",
+        "Success is the sum of small efforts repeated daily.",
+        "The best time to start was yesterday. The next best time is today."
+    ];
+
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
     res.render('home.ejs', {
         user: req.session.user,
-    })
-})
+        quote: randomQuote
+    });
+});
 
 app.get('/auth/sign-up', authCtrl.showSignUpForm )
 app.post('/auth/sign-up', authCtrl.signUp)

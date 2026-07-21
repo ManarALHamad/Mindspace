@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Form</title>
-</head>
-<body>
-    
+<%- include('../partials/nav') %>
 
 <h2>Add tasks</h2>
+
+<% if (list.tasks.length === 0) { %>
+    <p>No tasks added yet.</p>
+<% } else { %>
+    <p>You've added <%= list.tasks.length %> task<%= list.tasks.length === 1 ? '' : 's' %> so far.</p>
+<% } %>
+
 
 <form action="/lists/<%= list._id %>/tasks" method="POST">
         Task Title: 
