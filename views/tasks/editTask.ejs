@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit task</title>
+</head>
+<body>
+    
+<h2>Edit task</h2>
+
+<form action="/lists/<%= list._id %>/tasks/<%= task._id %>?_method=PUT" method="POST">
+        Task Title: 
+        <input type="text" name="title" />
+
+        Task Description:
+        <input type="text" name="description" />
+
+        Due Date:
+        <input type="date" name="dueDate" />
+        
+        <!-- Completed:
+        <input type="checkbox" name="isCompleted" /> -->
+    <button type="submit">Update Task</button>
+    
+    </form>
+
+    <a href="/lists/<%= list._id %>">
+    <button type="button">Back to the list</button>
+ </a>
+
+</body>
+</html>

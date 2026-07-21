@@ -6,7 +6,8 @@
     <title><%=list.title%></title>
 </head>
 <body>
-    
+ 
+<!-- list name and tasks page -->
     
 <h1>To do list name: <%= list.title %></h1>
 
@@ -16,7 +17,25 @@
             <%= item.title %> <br>
             <%= item.description %> <br>
             <%= item.dueDate %>
-        </li>
+
+
+ <a href="/lists/<%= list._id %>/tasks/<%= item._id %>/edit">
+                <button type="button">Edit Task</button>
+    </a>
+
+
+ <form action="/lists/<%= list._id %>/tasks/<%= item._id %>?_method=DELETE" method="POST">
+        <button>Delete</button>
+
+
+    </form>
+
+   
+
+</li>
+
+
+
 
    <% }) %>
         

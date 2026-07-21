@@ -55,14 +55,16 @@ app.get('/lists', listCtrl.index)
 app.get('/lists/new', listCtrl.newList)
 app.post('/lists', listCtrl.createList)
 app.get('/lists/:listId', listCtrl.show)
-app.delete('/lists/:listId', listCtrl.deleteList);
+app.delete('/lists/:listId', listCtrl.deleteList)
 
 
 
 //tasks
 app.get('/lists/:listId/tasks/new', taskCtrl.newTask)
 app.post('/lists/:listId/tasks', taskCtrl.createTask)
-
+app.delete('/lists/:listId/tasks/:taskId', taskCtrl.deleteTask)
+app.get('/lists/:listId/tasks/:taskId/edit', taskCtrl.edit)
+app.put('/lists/:listId/tasks/:taskId', taskCtrl.update)
 
 app.get('/dashboard', async (req, res) => {
     if (!req.session.user){
