@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Article</title>
+</head>
+<body>
+    
+
+<h1>Write what is in your mind</h1>
+
+
+<form action="/articles" method="POST">
+
+Title:
+<input type="text" name="title" />
+
+Category:
+<select name="category">
+
+<option value="health">Health</option>
+<option value="beauty">Beauty</option>
+<option value="school">School</option>
+<option value="career">Career</option>
+<option value="friendships">Friendships</option>
+<option value="finance">Finance</option>
+<option value="travel">Travel</option>
+
+</select>
+
+Content:
+
+<textarea name="content" rows="20"></textarea>
+
+<button type="submit">Add Article</button>
+
+</form>
+
+
+
+</body>
+</html>

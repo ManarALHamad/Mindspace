@@ -13,6 +13,8 @@ const { MongoStore } = require('connect-mongo')
 const authCtrl = require('./controllers/auth')
 const listCtrl =require('./controllers/list')
 const taskCtrl =require('./controllers/task')
+const articleCtrl=require('./controllers/article')
+
 
 // Set the port from environment variable or default to 3000
 const port = process.env.PORT ? process.env.PORT : "3000";
@@ -84,7 +86,15 @@ app.get('/lists/:listId/tasks/:taskId/edit', taskCtrl.edit)
 app.put('/lists/:listId/tasks/:taskId', taskCtrl.update)
 app.put('/lists/:listId/tasks/:taskId/complete', taskCtrl.toggleComplete)
 
-
+//articles
+// Articles
+app.get('/articles', articleCtrl.index);
+app.get('/articles/new', articleCtrl.newArticle);
+app.post('/articles', articleCtrl.createArticle);
+app.get('/articles/:articleId', articleCtrl.show);
+app.get('/articles/:articleId/edit', articleCtrl.edit);
+app.put('/articles/:articleId', articleCtrl.update);
+app.delete('/articles/:articleId', articleCtrl.deleteArticle);
 
 app.get('/dashboard', async (req, res) => {
     if (!req.session.user){

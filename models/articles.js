@@ -15,6 +15,7 @@ title: {
 category: {
 
     type: String,
+    enum:['health','beauty', 'school', 'career', 'friendships', 'finance','travel'],
     required: true,
 
     },

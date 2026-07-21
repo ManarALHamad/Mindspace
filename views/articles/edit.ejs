@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Article</title>
+</head>
+<body>
+
+<h1>Edit Article</h1>
+
+<form action="/articles/<%= article._id %>?_method=PUT" method="POST">
+
+    Title:
+    <input
+        type="text"
+        name="title"
+        value="<%= article.title %>"
+    />
+
+    
+
+    Category:
+
+    <select name="category">
+
+        <option value="health" <%= article.category === "health" ? "selected" : "" %>>Health</option>
+
+        <option value="beauty" <%= article.category === "beauty" ? "selected" : "" %>>Beauty</option>
+
+        <option value="school" <%= article.category === "school" ? "selected" : "" %>>School</option>
+
+        <option value="career" <%= article.category === "career" ? "selected" : "" %>>Career</option>
+
+        <option value="friendships" <%= article.category === "friendships" ? "selected" : "" %>>Friendships</option>
+
+        <option value="finance" <%= article.category === "finance" ? "selected" : "" %>>Finance</option>
+
+        <option value="travel" <%= article.category === "travel" ? "selected" : "" %>>Travel</option>
+
+    </select>
+
+    
+
+Content:
+    
+<textarea name="content" rows="20"><%= article.content %></textarea>
+
+<button type="submit">Update Article</button>
+
+</form>
+
+
+<a href="/articles/<%= article._id %>">
+    <button type="button">Cancel</button>
+</a>
+
+</body>
+</html>
