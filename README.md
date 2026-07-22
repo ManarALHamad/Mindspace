@@ -2,5 +2,5 @@
 
 ## 
 
-![My Website](images/mindspace.png)
+![My Website](.public/images/mindspace.png)
 
