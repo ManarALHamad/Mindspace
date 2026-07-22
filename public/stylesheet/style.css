@@ -599,3 +599,20 @@ show list */
 .back-btn:hover{
     opacity: 0.9;
 }
+
+.cancel-btn{
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    padding: 12px;
+    border: 2px solid #DD2D4A;
+    border-radius: 999px;
+    color: #DD2D4A;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.cancel-btn:hover{
+    background: #DD2D4A;
+    color: white;
+}
