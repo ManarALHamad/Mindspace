@@ -3,24 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mindspace</title>
+    <title>MindSpace</title>
 
-  
+    <link rel="stylesheet" href="/stylesheet/style.css">
 </head>
 <body>
 
-<h1><%= quote %></h1>
+<nav class="navbar">
+    <a class="active" href="/">Home</a>
+
     <% if (user) { %>
-        <h1>Welcome to the app <%= user.username %></h1>
-        <form action="/auth/sign-out?_method=DELETE" method="POST">
-            <button type="submit">Sign Out</button>
-        </form>
-        <a href="/dashboard">View dashboard</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/lists">To-Do Lists</a>
+        <a href="/articles">Articles</a>
+    <% } %>
+</nav>
+
+<div class="hero">
+
+    <h1>Welcome to <span>MindSpace</span></h1>
+
+    <p class="quote">
+        "<%= quote %>"
+    </p>
+
+    <% if (user) { %>
+
+    <h2>Hello, <%= user.username %> 👋</h2>
+
+  <div class="buttons">
+
+   <a class="btn primary" href="/dashboard">
+    Go to Dashboard
+     </a>
+
+   <form action="/auth/sign-out?_method=DELETE" method="POST">
+   <button class="btn secondary" type="submit">
+     Sign Out
+      </button>
+     </form>
+
+      </div>
+
     <% } else { %>
-        <a href="/auth/sign-up">Sign Up</a>
-        <a href="/auth/sign-in">Sign In</a>
+
+     <p>Your personal space to organize your thoughts, articles, and daily tasks.</p>
+        <div class="buttons">
+
+    <a class="btn primary" href="/auth/sign-up">
+      Sign Up
+    </a>
+
+   <a class="btn secondary" href="/auth/sign-in">
+   Sign In
+   </a>
+
+</div>
+
     <% } %>
 
-    
+</div>
+<footer>
+    <img src ="/images/footer.png">
+</footer>
 </body>
 </html>

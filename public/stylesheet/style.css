@@ -1,29 +1,114 @@
-/* :root {
-  --primary: #880D1E;
-  --secondary: #DD2D4A;
-  --accent: #F26A8D;
-  --light-pink: #F49CBB;
-  --light-blue: #CBEEF3;
-} */
+/* Color Palette */
+:root{
+    --dark: #880D1E;
+    --red: #DD2D4A;
+    --pink: #F26A8D;
+    --light-pink: #F49CBB;
+    --blue: #CBEEF3;
+}
 
-.navbar {
+body{
+    margin:0;
+    background: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navigation */
+
+.navbar{
+    width: fit-content;
+    margin: 30px auto;
+    display: flex;
+    gap: 8px;
+
+    background: white;
+    padding: 8px;
+    border-radius: 999px;
+
+    box-shadow: 0 10px 25px rgba(136,13,30,.15);
+}
+
+.navbar a{
+    text-decoration: none;
+    color: var(--dark);
+
+    padding: 12px 22px;
+    border-radius: 999px;
+
+    font-weight: 600;
+    transition: .3s;
+}
+
+.navbar a:hover{
+    background: var(--red);
+    color: white;
+}
+
+.navbar a.active{
+    background: var(--dark);
+    color: white;
+}
+
+.hero{
+    max-width: 900px;
+    margin: 70px auto;
+    text-align: center;
+}
+
+.hero h1{
+    font-size: 4rem;
+    color: #880D1E;
+}
+
+.hero span{
+    color: #DD2D4A;
+}
+
+h2{
+    color: #DD2D4A;
+}
+
+
+.quote{
+    font-size: 1.3rem;
+    color: #880D1E;
+    margin: 25px 0;
+    font-style: italic;
+}
+
+.buttons{
+    margin-top: 35px;
     display: flex;
     justify-content: center;
-    gap: 100px;
-    padding: 10px;
-    background: #DD2D4A;
-    border-radius: 20px;
-    
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.navbar a {
-    color: white;
+.btn{
     text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 30px;
-    transition: 0.3s;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .3s;
 }
 
-.navbar a:hover {
+.primary{
     background: #880D1E;
+    color: white;
+}
+
+.primary:hover{
+    background: #DD2D4A;
+}
+
+.secondary{
+    background: white;
+    color: #880D1E;
+    border: 2px solid #880D1E;
+}
+
+.secondary:hover{
+    background: #F49CBB;
 }
