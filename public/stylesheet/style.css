@@ -196,7 +196,39 @@ width: 100%;
     margin-bottom: 10px;
 }
 
+.form-container h3{
+    color: #DD2D4A;
+    
+}
+
 .form-container p{
     color: #880D1E;
     margin-bottom: 30px;
+}
+
+.form-container input{
+
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #F49CBB;
+    border-radius: 12px;
+    font-size: 1rem;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+}
+
+.form-container button{
+    
+    width: 100%;
+    border: none;
+    background: #7ee1ee;
+    color: white;
+    padding: 15px;
+    border-radius: 999px;
+    font-size: 1rem;
+    cursor: pointer;
+    
+}
+.form-container button:hover{
+    background: #DD2D4A;
 }
