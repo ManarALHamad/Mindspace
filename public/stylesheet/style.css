@@ -1,11 +1,5 @@
 /* Color Palette */
-:root{
-    --dark: #880D1E;
-    --red: #DD2D4A;
-    --pink: #F26A8D;
-    --light-pink: #F49CBB;
-    --blue: #CBEEF3;
-}
+
 
 body{
     margin:0;
@@ -302,4 +296,87 @@ width: 100%;
 
 .form a button:hover{
     background: #7ee1ee;
+}
+/* 
+show list */
+
+:root{
+    --dark: #880D1E;
+    --red: #DD2D4A;
+    --pink: #F26A8D;
+    --light-pink: #F49CBB;
+    --blue: #CBEEF3;
+}
+
+
+.list-section{
+    max-width:900px;
+    margin:60px auto;
+}
+
+.list-section h1{
+    text-align:center;
+    color:#F26A8D;
+    margin-bottom:40px;
+}
+
+.tasks{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.task-card{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 8px 20px rgba(136,13,30,.12);
+}
+
+.task-card h2{
+    color:#DD2D4A;
+    margin-top:0;
+}
+
+.task-card p{
+    color:#555;
+}
+
+.task-card small{
+    display:block;
+    margin:15px 0;
+    color:#888;
+}
+
+.task-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:20px;
+}
+
+.task-buttons button,
+.add-task-btn{
+    background:#880D1E;
+    color:white;
+    border:none;
+    border-radius:999px;
+    padding:12px 20px;
+    cursor:pointer;
+    text-decoration:none;
+}
+
+.task-buttons button:hover,
+.add-task-btn:hover{
+    background:#DD2D4A;
+}
+
+.add-task-btn{
+    display:block;
+    width:fit-content;
+    margin:40px auto 0;
+}
+
+.empty-state{
+    text-align:center;
+    color:#666;
 }

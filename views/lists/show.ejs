@@ -1,59 +1,70 @@
 <%- include('../partials/nav') %>
- 
-<!-- list name and tasks page -->
-    
+
 <main class="page-main">
 
+    <section class="list-section">
 
-<h1><%= list.title %></h1>
+        <h1><%= list.title %></h1>
 
+ <% if (list.tasks.length === 0) { %>
 
+ <p class="empty-state">
+ No tasks yet. Start by adding your first task!
+ </p>
 
+   <% } else { %>
 
+<div class="tasks">
 
-<ul>
-   <% list.tasks.forEach((item) => { %>
-<li>
-            <%= item.title %> <br>
-            <%= item.description %> <br>
-            <%= item.dueDate %>
+ <% list.tasks.forEach((item) => { %>
 
-<form action="/lists/<%= list._id %>/tasks/<%= item._id %>/complete?_method=PUT" method="POST">
+   <article class="task-card">
 
-    <input
-        type="checkbox"
-        <%= item.isCompleted ? "checked" : "" %>
-        onchange="this.form.submit()"
-    >
+   <h2><%= item.title %></h2>
 
-</form>
+      <p><%= item.description %></p>
 
+   <small>
+      Due:
+      <%= item.dueDate ? new Date(item.dueDate).toLocaleDateString() : "No due date" %>
+       </small>
 
- <a href="/lists/<%= list._id %>/tasks/<%= item._id %>/edit">
-<button type="button">Edit Task</button>
-    </a>
+   <form action="/lists/<%= list._id %>/tasks/<%= item._id %>/complete?_method=PUT" method="POST">
 
+    
+     <input
+     type="checkbox"
+     <%= item.isCompleted ? "checked" : "" %>
+       >
+    Completed
+    
 
- <form action="/lists/<%= list._id %>/tasks/<%= item._id %>?_method=DELETE" method="POST">
-    <button>Delete</button>
+     </form>
+
+       <div class="task-buttons">
+
+   <a href="/lists/<%= list._id %>/tasks/<%= item._id %>/edit">
+       <button type="button">Edit</button>
+      </a>
+
+    <form action="/lists/<%= list._id %>/tasks/<%= item._id %>?_method=DELETE" method="POST"> 
+        <button>Delete</button> 
     </form>
 
-   
+          </div>
 
-</li>
+       </article>
 
+                <% }) %>
 
+            </div>
 
-   <% }) %>
-        
-</ul>   
+        <% } %>
 
+        <a href="/lists/<%= list._id %>/tasks/new" class="add-task-btn">
+            Add More Tasks
+        </a>
 
-<a href="/lists/<%= list._id %>/tasks/new">
-    <button type="button">Add More Tasks</button>
-</a>
+    </section>
 
 </main>
-
-</body>
-</html>
