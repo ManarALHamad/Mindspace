@@ -17,6 +17,7 @@ const index = async (req, res) => {
 const createArticle = async (req, res) => {
 
     const article = await Article.create({
+        
         title: req.body.title,
         category: req.body.category,
         content: req.body.content,
