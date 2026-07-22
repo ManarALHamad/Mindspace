@@ -7,17 +7,19 @@
     <h1>My To-do-lists</h1>
 
     <% lists.forEach((item) =>{ %>
-        <ul>
+    
+      <div class="list-card"> 
+       
         <a href ="/lists/<%= item._id %>">
 
              <%= item.title %>
         </a>
-       </ul>
+       
 
     <form action="/lists/<%= item._id %>?_method=DELETE" method="POST" style="display: inline;">
      <button type="submit">Delete</button>
         </form>
-        
+        </div> 
     <% }) %>
 
     
