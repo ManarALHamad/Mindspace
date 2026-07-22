@@ -1,4 +1,8 @@
-body{
-
-    background-color: pink;
+:root {
+  --primary: #880D1E;
+  --secondary: #DD2D4A;
+  --accent: #F26A8D;
+  --light-pink: #F49CBB;
+  --light-blue: #CBEEF3;
 }
+
