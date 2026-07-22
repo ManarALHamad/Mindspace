@@ -1,14 +1,24 @@
 <%- include('../partials/nav') %>
 
+
+<div class="form-container">
+
+
     <h1>Create a To-do-list</h1>
+
+    <p>Give your list a name to get started</p>
 
     <form action ="/lists" method="POST">
     
     List Name:
 
-    <input type="text" name="title" required />
+    <input type="text" name="title" id ="title" placeholder="e.g. Summer Goals" required />
 
     <button type="submit">Add task</button>
-    
+
+    </form>
+
+    </div>
+
 </body>
 </html>
