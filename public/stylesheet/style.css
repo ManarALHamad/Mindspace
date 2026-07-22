@@ -380,3 +380,67 @@ show list */
     text-align:center;
     color:#666;
 }
+
+
+
+.lists-section{
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.lists-section h1{
+    color: #880D1E;
+    margin-bottom: 30px;
+}
+
+.list-card{
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+.list-card a{
+    display: block;
+    color: #880D1E;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.list-card button{
+    margin-top: 10px;
+}
+
+.delete-btn,
+.create-list-btn {
+    display: inline-block;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 22px;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: #DD2D4A;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #880D1E;
+}
+
+.create-list-btn {
+    margin-top: 20px;
+    background-color: #880D1E;
+    color: white;
+}
+
+.create-list-btn:hover {
+    background-color: #DD2D4A;
+}
