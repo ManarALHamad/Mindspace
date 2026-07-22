@@ -1,5 +1,7 @@
 <%- include('../partials/nav') %>
 
+<div class="form">
+
 <h2>Add tasks</h2>
 
 <% if (list.tasks.length === 0) { %>
@@ -10,6 +12,7 @@
 
 
 <form action="/lists/<%= list._id %>/tasks" method="POST">
+
         Task Title: 
         <input type="text" name="title" />
 
@@ -29,7 +32,7 @@
     <button type="button">Back to the list</button>
  </a>
 
-
+</div>
 
 
 
