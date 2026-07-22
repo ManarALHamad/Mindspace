@@ -1,10 +1,14 @@
 <%- include('../partials/nav') %>
 
+<main>
+
+<section class="articles-section">
+
 <h1>My Articles</h1>
 
 <% articles.forEach((article) => { %>
 
-
+<div class="article-card">
     <a href="/articles/<%= article._id %>">
             <h3><%= article.title %></h3>
     </a>
@@ -13,15 +17,19 @@
 
     <form action="/articles/<%= article._id %>?_method=DELETE" method="POST">
 
-            <button type="submit">Delete</button>
+            <button type="submit" class="delete-btn">Delete</button>
     </form>
 
-
+</div>
 <% }) %>
 
 <a href="/articles/new">
-    <button>Create New Article</button>
+    <button class="create-article-btn">Create New Article</button>
 </a>
+
+</section>
+
+</main>
 
 </body>
 </html>

@@ -1,20 +1,30 @@
 <%- include('../partials/nav') %>
 
+<main>
+
+<section class="article-section">
+
+
 <h1><%= article.title %></h1>
 
 <h3>Category: <%= article.category %></h3>
 
-<p>
+<p class="article-content">
     <%= article.content %>
 </p>
-
+<div class="article-buttons">
 <a href="/articles/<%= article._id %>/edit">
-    <button>Edit Article</button>
+    <button class="edit-btn">Edit Article</button>
 </a>
 
-<a href="/articles">
-    <button>Back to Articles</button>
+<a href="/articles" >
+    <button class="back-btn">Back to Articles</button>
 </a>
+</div>
+
+</section>
+
+</main>
 
 </body>
 </html>
