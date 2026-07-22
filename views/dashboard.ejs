@@ -1,22 +1,45 @@
 <%- include('./partials/nav') %>
 
+<div class="dashboard">
 
-    <h1><%= user.username %>'s dashboard</h1>
+    <h1>Welcome back, <span><%= user.username %></span> 👋</h1>
 
-    <h2>To Do List</h2>
+    <p class="dashboard-subtitle">
+        What would you like to work on today?
+    </p>
 
-    <a href="/lists/new">
-    <button type="button">Create Your To-do List</button>
-    </a>
-    
+    <div class="dashboard-cards">
 
-    <br/>
+        <div class="card">
 
-    <h2>Write Article</h2>
+            <h2>📝 To-Do Lists</h2>
 
-     <a href="/articles/new">
-    <button type="button">Create Your Article</button>
-    </a>
+            <p>
+                Organize your daily tasks and stay productive.
+            </p>
 
-</body>
-</html>
+            <a href="/lists/new" class="btn">
+                Create To-Do List
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📖 Articles</h2>
+
+            <p>
+                Write your thoughts, ideas, and personal articles.
+            </p>
+
+            <a href="/articles/new" class="btn">
+                Write Article
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<img src="/images/footer.png" class="footer-image">
