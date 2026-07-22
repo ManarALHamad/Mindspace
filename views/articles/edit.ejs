@@ -11,32 +11,20 @@
 
 <form action="/articles/<%= article._id %>?_method=PUT" method="POST">
 
-    Title:
-    <input
-        type="text"
-        name="title"
-        value="<%= article.title %>"
-    />
+ Title:
+ <input type="text"name="title"value="<%= article.title %>"/>
 
-    
-
-    Category:
+ Category:
 
     <select name="category">
 
-        <option value="health" <%= article.category === "health" ? "selected" : "" %>>Health</option>
-
-        <option value="beauty" <%= article.category === "beauty" ? "selected" : "" %>>Beauty</option>
-
-        <option value="school" <%= article.category === "school" ? "selected" : "" %>>School</option>
-
-        <option value="career" <%= article.category === "career" ? "selected" : "" %>>Career</option>
-
-        <option value="friendships" <%= article.category === "friendships" ? "selected" : "" %>>Friendships</option>
-
-        <option value="finance" <%= article.category === "finance" ? "selected" : "" %>>Finance</option>
-
-        <option value="travel" <%= article.category === "travel" ? "selected" : "" %>>Travel</option>
+    <option value="health" <%= article.category === "health" ? "selected" : "" %>>Health</option>
+    <option value="beauty" <%= article.category === "beauty" ? "selected" : "" %>>Beauty</option>
+    <option value="school" <%= article.category === "school" ? "selected" : "" %>>School</option>
+    <option value="career" <%= article.category === "career" ? "selected" : "" %>>Career</option>
+    <option value="friendships" <%= article.category === "friendships" ? "selected" : "" %>>Friendships</option>
+    <option value="finance" <%= article.category === "finance" ? "selected" : "" %>>Finance</option>
+    <option value="travel" <%= article.category === "travel" ? "selected" : "" %>>Travel</option>
 
     </select>
 
@@ -52,7 +40,7 @@ Content:
 
 
 <a href="/articles/<%= article._id %>">
-    <button type="button">Cancel</button>
+    <button type="button">Cancel Update</button>
 </a>
 
 </body>
