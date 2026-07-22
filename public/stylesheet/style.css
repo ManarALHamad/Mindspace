@@ -181,3 +181,22 @@ width: 100%;
     background:#CBEEF3;
 }
 
+.form-container{
+    width: 420px;
+    margin: 70px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(136,13,30,.15);
+    text-align: center;
+}
+
+.form-container h1{
+    color: #DD2D4A;
+    margin-bottom: 10px;
+}
+
+.form-container p{
+    color: #880D1E;
+    margin-bottom: 30px;
+}
