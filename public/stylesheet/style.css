@@ -112,3 +112,9 @@ h2{
 .secondary:hover{
     background: #F49CBB;
 }
+
+img {
+width: 100%;
+    height: 400px;
+
+}
