@@ -296,10 +296,10 @@ width: 100%;
 .form a button{
     width: 100%;
     background: white;
-    color: #880D1E;
-    border: 2px solid #880D1E;
+    color: #DD2D4A;;
+    border: 2px solid #DD2D4A;;
 }
 
 .form a button:hover{
-    background: #F49CBB;
+    background: #7ee1ee;
 }

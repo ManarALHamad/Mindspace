@@ -14,6 +14,11 @@ const signUp = async (req, res) => {
         return res.send('Username already taken.')
     }
 
+    if (req.body.password.length < 6) {
+        return res.send('Password must be at least 6 characters long.')
+    }
+
+
     let userData = {}
     
     userData.username = req.body.username

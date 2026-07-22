@@ -9,7 +9,7 @@ const index = async (req, res) => {
     })
 
     res.render('articles/index.ejs',{
-
+        title: "Articles",
         articles
     })
 }
@@ -31,7 +31,9 @@ const createArticle = async (req, res) => {
 
 const newArticle = async (req, res) => {
 
-    res.render('articles/new.ejs')
+    res.render('articles/new.ejs',{
+        title:"New Articles"
+    })
 };
 
 
@@ -40,6 +42,7 @@ const show = async (req, res) => {
     const article = await Article.findById(req.params.articleId)
 
     res.render('articles/show.ejs', {
+        title:"Show Article",
         article
     });
 };
@@ -50,6 +53,7 @@ const edit = async(req, res) =>{
      const article = await Article.findById(req.params.articleId)
 
     res.render('articles/edit.ejs', {
+        title:"Edit Article",
         article
     });
 }

@@ -2,7 +2,14 @@
  
 <!-- list name and tasks page -->
     
-<h1>To do list name: <%= list.title %></h1>
+<main class="page-main">
+
+
+<h1><%= list.title %></h1>
+
+
+
+
 
 <ul>
    <% list.tasks.forEach((item) => { %>
@@ -45,6 +52,8 @@
 <a href="/lists/<%= list._id %>/tasks/new">
     <button type="button">Add More Tasks</button>
 </a>
+
+</main>
 
 </body>
 </html>

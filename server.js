@@ -77,7 +77,6 @@ app.get('/lists/:listId', listCtrl.show)
 app.delete('/lists/:listId', listCtrl.deleteList)
 
 
-
 //tasks
 app.get('/lists/:listId/tasks/new', taskCtrl.newTask)
 app.post('/lists/:listId/tasks', taskCtrl.createTask)
@@ -87,7 +86,6 @@ app.put('/lists/:listId/tasks/:taskId', taskCtrl.update)
 app.put('/lists/:listId/tasks/:taskId/complete', taskCtrl.toggleComplete)
 
 //articles
-// Articles
 app.get('/articles', articleCtrl.index);
 app.get('/articles/new', articleCtrl.newArticle);
 app.post('/articles', articleCtrl.createArticle);
@@ -101,9 +99,17 @@ app.get('/dashboard', async (req, res) => {
         return res.redirect('/auth/sign-in')
     }
     res.render('dashboard.ejs', {
+        title:"Dasboard",
         user: req.session.user
     })
 })
+
+app.get('/*splat', (req, res) => {
+    res.render('error.ejs', {
+        msg: 404
+    })
+})
+
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);

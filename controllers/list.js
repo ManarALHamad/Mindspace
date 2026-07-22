@@ -9,7 +9,7 @@ const index = async(req, res) => {
     })
 
     res.render('lists/index.ejs', {
-
+        title:"All Lists",
         lists
     })
 
@@ -28,18 +28,20 @@ const createList = async (req, res) => {
 
 }
 
-
-
 const newList = async (req, res) =>{
 
-    res.render('lists/new.ejs')
+    res.render('lists/new.ejs', {
+        title:"Create To-Do List"
+    })
 }
+
 //show list name with tasks
 const show = async (req, res) => {
 
     const list = await List.findById(req.params.listId)
-    console.log(list.task); 
+    
     res.render('lists/show.ejs', {
+        title:"Show Lists",
         list,
     })
 }

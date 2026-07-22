@@ -9,6 +9,7 @@ const newTask = async(req, res) => {
 
     res.render('tasks/newTask.ejs', {
         list,
+        title:"New Task",
         message: null
     });
 }
@@ -60,6 +61,7 @@ const edit = async (req, res) => {
     res.render('tasks/editTask.ejs', {
         list: foundList,
         task: foundTask,
+        title:"Edit Task",
     })
 
 
